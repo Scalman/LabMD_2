@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="372.0" prefWidth="463.0" style="-fx-background-color: grey;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.movieControllers.ShowMovieController">
+    <children>
+        <Label layoutX="224.0" layoutY="27.0" text="Title" textFill="WHITE" />
+        <Label layoutX="224.0" layoutY="68.0" text="Genre" textFill="WHITE" />
+        <Label layoutX="224.0" layoutY="48.0" text="Director" textFill="WHITE" />
+        <Label layoutX="224.0" layoutY="86.0" text="Rating" textFill="WHITE" />
+        <Label fx:id="titleLabel" layoutX="296.0" layoutY="27.0" textFill="WHITE" />
+        <Label fx:id="directorLabel" layoutX="296.0" layoutY="48.0" prefHeight="17.0" prefWidth="139.0" textFill="WHITE" />
+        <Label fx:id="genreLabel" layoutX="296.0" layoutY="68.0" prefHeight="17.0" prefWidth="141.0" textFill="WHITE" />
+        <Label fx:id="raitingLabel" layoutX="296.0" layoutY="86.0" prefHeight="17.0" prefWidth="139.0" textFill="WHITE" />
+        <ImageView fx:id="movieCover" fitHeight="150.0" fitWidth="200.0" layoutX="10.0" layoutY="15.0" pickOnBounds="true" preserveRatio="true" />
+      <Label layoutX="225.0" layoutY="107.0" text="Submitted By" textFill="WHITE" />
+      <Label fx:id="submittedByLabel" layoutX="314.0" layoutY="108.0" prefHeight="17.0" prefWidth="122.0" textFill="WHITE" />
+      <TextArea fx:id="reviewField" editable="false" layoutX="15.0" layoutY="206.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="150.0" prefWidth="434.0" />
+    </children>
+</AnchorPane>

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: Gray;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.movieControllers.ReviewMovieController">
+   <children>
+      <TextArea fx:id="textReview" layoutX="24.0" layoutY="109.0" prefHeight="208.0" prefWidth="314.0" />
+      <RadioButton fx:id="one" layoutX="24.0" layoutY="73.0" mnemonicParsing="false" onAction="#radioButton" text="1" textOverrun="LEADING_WORD_ELLIPSIS">
+         <toggleGroup>
+            <ToggleGroup fx:id="raitingRadio" />
+         </toggleGroup></RadioButton>
+      <RadioButton fx:id="two" layoutX="63.0" layoutY="73.0" mnemonicParsing="false" onAction="#radioButton" text="2" toggleGroup="$raitingRadio" />
+      <ImageView fx:id="imgView" fitHeight="208.0" fitWidth="215.0" layoutX="358.0" layoutY="109.0" pickOnBounds="true" preserveRatio="true" />
+      <RadioButton fx:id="three" layoutX="104.0" layoutY="73.0" mnemonicParsing="false" onAction="#radioButton" text="3" toggleGroup="$raitingRadio" />
+      <RadioButton fx:id="four" layoutX="148.0" layoutY="73.0" mnemonicParsing="false" onAction="#radioButton" text="4" toggleGroup="$raitingRadio" />
+      <RadioButton fx:id="five" layoutX="191.0" layoutY="73.0" mnemonicParsing="false" onAction="#radioButton" text="5" toggleGroup="$raitingRadio" />
+      <Label layoutX="224.0" layoutY="43.0" text="Review">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Button layoutX="514.0" layoutY="326.0" mnemonicParsing="false" onAction="#submitReview" text="Submit" />
+      <Button fx:id="abortReview" layoutX="443.0" layoutY="326.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="62.0" text="Abort" />
+      <Label fx:id="title" layoutX="293.0" layoutY="46.0">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Label fx:id="errorLabel" layoutX="104.0" layoutY="345.0" textFill="#940707">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>

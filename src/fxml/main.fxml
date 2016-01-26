@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.cell.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.cell.PropertyValueFactory?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0" style="-fx-background-color: grey;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.MainController">
+   <children>
+      <MenuBar layoutX="-1.0" minHeight="-Infinity" minWidth="-Infinity" prefWidth="1280.0">
+        <menus>
+          <Menu mnemonicParsing="false" text="File">
+            <items>
+              <MenuItem mnemonicParsing="false" text="Close" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Edit">
+            <items>
+              <MenuItem mnemonicParsing="false" text="Delete" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Help">
+            <items>
+              <MenuItem mnemonicParsing="false" text="About" />
+            </items>
+          </Menu>
+        </menus>
+      </MenuBar>
+      <TextField fx:id="albumSearchField" layoutX="1027.0" layoutY="43.0" />
+      <Button fx:id="albumSearchButton" layoutX="1206.0" layoutY="43.0" mnemonicParsing="false" onAction="#searchForAlbum" text="Search" />
+      <Label layoutX="207.0" layoutY="48.0" text="Albums" textFill="WHITE">
+         <font>
+            <Font size="17.0" />
+         </font></Label>
+      <Button fx:id="refreshAlbums" layoutX="11.0" layoutY="77.0" mnemonicParsing="false" onAction="#refreshAlbums" prefHeight="27.0" prefWidth="170.0" text="Refresh" />
+      <Button fx:id="albumAdd" layoutX="11.0" layoutY="114.0" mnemonicParsing="false" onAction="#addAlbum" prefHeight="27.0" prefWidth="170.0" text="Add Album" />
+      <TableView fx:id="albumTable" layoutX="192.0" layoutY="77.0" onMouseClicked="#showSelectedAlbum" prefHeight="293.0" prefWidth="1075.0">
+        <columns>
+
+            <TableColumn fx:id="title" prefWidth="295.5497131347656" text="Title">
+                <cellValueFactory>
+                    <PropertyValueFactory property="title" />
+                </cellValueFactory>
+            </TableColumn>
+            <TableColumn fx:id="artist" minWidth="5.956573486328125" prefWidth="189.4503173828125" text="Artist">
+                <cellValueFactory>
+                    <PropertyValueFactory property="artist" />
+                </cellValueFactory>
+            </TableColumn>
+            <TableColumn fx:id="genre" minWidth="5.76397705078125" prefWidth="179.32611083984375" text="Genre">
+                <cellValueFactory>
+                    <PropertyValueFactory property="genre" />
+                </cellValueFactory>
+            </TableColumn>
+            <TableColumn fx:id="raiting" minWidth="0.0" prefWidth="85.0" text="Rating">
+                <cellValueFactory>
+                    <PropertyValueFactory property="rating" />
+                </cellValueFactory>
+            </TableColumn>
+
+        </columns>
+         <contextMenu>
+            <ContextMenu>
+              <items>
+                  <MenuItem fx:id="contextAlbumEdit" mnemonicParsing="false" onAction="#editAlbum" text="Edit" />
+                  <MenuItem fx:id="contextAlbumDelete" mnemonicParsing="false" onAction="#deleteAlbum" text="Delete" />
+                  <MenuItem fx:id="contextAlbumReview" mnemonicParsing="false" onAction="#reviewAlbum" text="Review" />
+              </items>
+            </ContextMenu>
+         </contextMenu>
+      </TableView>
+      <TableView fx:id="movieTable" layoutX="194.0" layoutY="413.0" onMouseClicked="#showSelectedMovie" prefHeight="301.0" prefWidth="1075.0">
+         <columns>
+            <TableColumn prefWidth="295.5497131347656" text="Title">
+               <cellValueFactory>
+                  <PropertyValueFactory property="title" />
+               </cellValueFactory>
+            </TableColumn>
+            <TableColumn minWidth="5.956573486328125" prefWidth="189.4503173828125" text="Director">
+               <cellValueFactory>
+                  <PropertyValueFactory property="director" />
+               </cellValueFactory>
+            </TableColumn>
+            <TableColumn minWidth="5.76397705078125" prefWidth="179.32611083984375" text="Genre">
+               <cellValueFactory>
+                  <PropertyValueFactory property="genre" />
+               </cellValueFactory>
+            </TableColumn>
+            <TableColumn minWidth="0.0" prefWidth="85.0" text="Rating">
+               <cellValueFactory>
+                  <PropertyValueFactory property="rating" />
+               </cellValueFactory>
+            </TableColumn>
+         </columns>
+         <contextMenu>
+            <ContextMenu>
+              <items>
+                  <MenuItem fx:id="contextMovieEdit" mnemonicParsing="false" onAction="#editMovie" text="Edit" />
+                  <MenuItem fx:id="contextMovieDelete" mnemonicParsing="false" onAction="#deleteMovie" text="Delete" />
+                  <MenuItem fx:id="contextMovieReview" mnemonicParsing="false" onAction="#reviewMovie" text="Review" />
+              </items>
+            </ContextMenu>
+         </contextMenu>
+      </TableView>
+      <Button layoutX="1207.0" layoutY="380.0" mnemonicParsing="false" onAction="#searchForMovies" text="Search" />
+      <TextField fx:id="movieSearchField" layoutX="1028.0" layoutY="378.0" />
+      <Button fx:id="refreshMovies" layoutX="13.0" layoutY="413.0" mnemonicParsing="false" onAction="#refreshMovies" prefHeight="27.0" prefWidth="170.0" text="Refresh" />
+      <Button fx:id="addMovie" layoutX="14.0" layoutY="450.0" mnemonicParsing="false" onAction="#addMovie" prefHeight="27.0" prefWidth="170.0" text="Add Movie" />
+      <Label layoutX="215.0" layoutY="386.0" text="Movies" textFill="WHITE">
+         <font>
+            <Font size="17.0" />
+         </font></Label>
+      <RadioButton fx:id="albumTitleSearch" layoutX="891.0" layoutY="49.0" mnemonicParsing="false" selected="true" text="Title">
+         <toggleGroup>
+            <ToggleGroup fx:id="albumRadio" />
+         </toggleGroup>
+      </RadioButton>
+      <RadioButton fx:id="albumArtistSearch" layoutX="957.0" layoutY="48.0" mnemonicParsing="false" text="Artist" toggleGroup="$albumRadio" />
+      <RadioButton fx:id="movieRatingSearch" layoutX="957.0" layoutY="384.0" mnemonicParsing="false" text="Rating">
+         <toggleGroup>
+            <ToggleGroup fx:id="movieRadio" />
+         </toggleGroup>
+      </RadioButton>
+      <RadioButton fx:id="movieGenreSearch" layoutX="891.0" layoutY="385.0" mnemonicParsing="false" text="Genre" toggleGroup="$movieRadio" />
+      <RadioButton fx:id="movieDirectorSearch" layoutX="814.0" layoutY="386.0" mnemonicParsing="false" selected="true" text="Director" toggleGroup="$movieRadio" />
+   </children>
+</AnchorPane>

@@ -11,7 +11,7 @@ public class Main extends Application {
 
     @Override
     public void start(Stage primaryStage){
-
+//sjdjdjdjdj
         try {
             InitFxml initFxml = new InitFxml();
             initFxml.initializeLoadersAndControllers(primaryStage);
